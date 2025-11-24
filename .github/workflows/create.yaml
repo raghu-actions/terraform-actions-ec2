@@ -13,15 +13,15 @@ jobs:
       - name: run init
         run: terraform init
 
-      # - name: Configure AWS Credentials
-      #   uses: aws-actions/configure-aws-credentials@v4
-      #   with:
-      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} #github secret credials add
-      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     aws-region: us-east-1 # Replace with your desired AWS region
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} #github secret credials add
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1 # Replace with your desired AWS region
 
-      # - name: run plan
-      #   run: terraform plan
+      - name: run plan
+        run: terraform plan
 
-      # - name: run apply
-      #   run: terraform apply -auto-approve
+      - name: run apply
+        run: terraform apply -auto-approve
